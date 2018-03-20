@@ -1,3 +1,4 @@
+Tässä on tarinatuokion tilihistoria
 commit 42270b2f673b5b7379ac46b781d55d18c3327683
 Author: Toivo Kiiski <toivo.kiiski@helsinki.fi>
 Date:   Tue Mar 20 13:21:40 2018 +0200
