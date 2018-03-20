@@ -1,4 +1,4 @@
-# Tuhkimon Tuoreet Turinat
+# Tuhkimon *Tuoreet* Turinat
 Tuhkimo sai *vapauden*, kun hänelle annettiin lahjaksi **puinen** korkokenkä, joka oli muotoiltu alkuperäisen lasikengän mukaan.
 Tuhkimo päätti kuitenkin, että hänen tulevaisuutensa ei kuuluisi hänet pelastaneelle prinssille. Tuhkimo halusi nähdä vieraita maita ja uusia ihmisiä eikä vain homehtua huomattavasti kauniimpien seinien sisällä.
 Hänellä oli ollut lapsuudesta asti haaveena käydä viereisessä haltia voittoisessa **Huopalahden** valtakunnassa.
