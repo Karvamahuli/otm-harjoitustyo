@@ -5,4 +5,4 @@ Tuhkimo sai *vapauden*, kun hänelle annettiin lahjaksi **puinen** korkokenkä, 
 
 [komentorivi.txt](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-[gitlog.txt]
+[gitlog.txt](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
