@@ -8,3 +8,5 @@ Hänellä oli ollut lapsuudesta asti haaveena käydä viereisessä haltia voitto
 [komentorivi.txt](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+
+[alustava määrittelydokumentti.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/alustava%20m%C3%A4%C3%A4rittelydokumentti.md)
