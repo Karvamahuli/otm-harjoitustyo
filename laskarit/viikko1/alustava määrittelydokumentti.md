@@ -7,13 +7,20 @@ Sovelluksen avulla käyttäjä voi kokea Tuhkimon lapsuuden ainutlaatuisella tav
 ### Suunnitellut toiminallisuudet
 
 -Käyttäjän valitsee itselleen nimen, jota näkyy pelin läpipääsyn jälkeen Hall of Fame -luettelossa.
+
 -Hall of Fame -luettelon tarkastelu.
+
 -Käyttäjä voi nimen valittua aloittaa pelin ja yrittää läpäistä sitä.
+
 -Käyttäjä kirjoittaa tekstikenttään asian, jonka hän haluaisi tehdä, johon peli antaa myöntävän tai kielteisen vastauksen.
+
 
 ### Jatkokehitysideoita
 
 -Peliin voi luoda jonkinlaisen pisteytysjärjestelmän, jolla voitaisiin vertailla käyttäjien suoritusta.
+
 -Pelin istuntojen välinen tallennusmahdollisuus käyttäjälle.
+
 -Taistelun lisääminen peliin.
+
 -Samalla käyttäjätilillä mahdollisuus useampaan pelinläpäisyyn.
