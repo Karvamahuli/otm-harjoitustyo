@@ -1,6 +1,7 @@
 package main.domain;
 
 public class Henkilo {
+
     private String nimi;
     private int sijaintiX;
     private int sijaintiY;
@@ -10,6 +11,7 @@ public class Henkilo {
         this.sijaintiX = sijaintiX;
         this.sijaintiY = sijaintiY;
     }
+
     public Henkilo(String nimi) {
         this.nimi = nimi;
         this.sijaintiX = 0;
@@ -44,6 +46,8 @@ public class Henkilo {
         this.sijaintiX = sijaintiX;
         this.sijaintiY = sijaintiY;
     }
-    
-    
+
+    public String koordinaateissa() {
+        return this.sijaintiX+", "+this.sijaintiY;
+    }
 }
