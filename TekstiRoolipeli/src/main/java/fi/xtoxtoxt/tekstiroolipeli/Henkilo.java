@@ -48,6 +48,12 @@ public class Henkilo {
     }
 
     public String koordinaateissa() {
-        return this.sijaintiX+", "+this.sijaintiY;
+        return this.sijaintiX + ", " + this.sijaintiY;
     }
+
+    @Override
+    public String toString() {
+        return this.nimi;
+    }
+
 }

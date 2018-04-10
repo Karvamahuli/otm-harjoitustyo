@@ -1,3 +1,4 @@
+import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -30,5 +31,8 @@ public class HenkiloTest {
     // The methods must be annotated with annotation @Test. For example:
     
      @Test
-     public void hello() {}
+     public void henkilonLuonti() {
+         Henkilo sakari = new Henkilo("Sakari");
+         assertEquals("Sakari", sakari.toString());
+     }
 }
