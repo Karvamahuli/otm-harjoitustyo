@@ -6,3 +6,19 @@ Hänellä oli ollut lapsuudesta asti haaveena käydä viereisessä haltia voitto
 ### Viikko 1
 
 [alustava määrittelydokumentti.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/alustava%20m%C3%A4%C3%A4rittelydokumentti.md)
+
+### Testaus
+
+Testit suoritetaan komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
