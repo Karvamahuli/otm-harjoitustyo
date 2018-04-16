@@ -21,6 +21,11 @@ public class Huone {
         this.kuvaus = kuvaus;
     }
 
+    public boolean isHuoneOlemassa() {
+        return huoneOlemassa;
+    }
+    
+
     @Override
     public String toString() {
         return this.kuvaus;
