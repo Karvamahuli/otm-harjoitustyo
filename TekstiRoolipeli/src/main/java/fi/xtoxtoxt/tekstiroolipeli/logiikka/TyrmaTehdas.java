@@ -1,5 +1,7 @@
-package fi.xtoxtoxt.tekstiroolipeli;
+package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
+import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
+import fi.xtoxtoxt.tekstiroolipeli.Huone;
 import java.util.Scanner;
 
 public class TyrmaTehdas {

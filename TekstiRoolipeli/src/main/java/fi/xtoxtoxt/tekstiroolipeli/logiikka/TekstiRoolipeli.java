@@ -1,4 +1,4 @@
-package fi.xtoxtoxt.tekstiroolipeli;
+package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
 public class TekstiRoolipeli {
 
