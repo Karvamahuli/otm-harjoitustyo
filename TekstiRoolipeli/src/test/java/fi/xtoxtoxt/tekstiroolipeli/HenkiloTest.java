@@ -1,6 +1,5 @@
 package fi.xtoxtoxt.tekstiroolipeli;
 
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,9 +28,6 @@ public class HenkiloTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    
     @Test
     public void henkilonLuonti() {
         Henkilo sakari = new Henkilo("Sakari");
@@ -49,12 +45,17 @@ public class HenkiloTest {
         Henkilo sakari = new Henkilo("Sakari", 1, 1);
         assertEquals("Sakari", sakari.toString());
     }
-    
+
     @Test
-    public void henkilonKoordinaatitTulostuuOikein(){
+    public void henkilonKoordinaatitTulostuuOikein() {
         Henkilo sakari = new Henkilo("Sakari");
         assertEquals("0, 0", sakari.koordinaateissa());
     }
-    
-    
+
+    @Test
+    public void henkilonSiirtoKohtaan() {
+        Henkilo sakari = new Henkilo("Sakari");
+        sakari.siirraKohtaan(2, 2);
+        assertEquals("2, 2", sakari.koordinaateissa());
+    }
 }

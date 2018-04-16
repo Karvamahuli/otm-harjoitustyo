@@ -28,7 +28,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>fi/xtoxtoxt/tekstiroolipeli/TekstiRoolipeli.java</exclude>
+                        <exclude>fi/xtoxtoxt/tekstiroolipeli/logiikka/TekstiRoolipeli/*</exclude>
                     </excludes>
                 </configuration>   
                 <executions>

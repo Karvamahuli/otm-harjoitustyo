@@ -23,28 +23,28 @@ public class TyrmaTehdas {
     public void liikuIlmansuuntaan(String suunta) {
         if (suunta.equals("pohjoinen")
                 && this.sankari.getSijaintiY() + 1 < this.huoneet[this.sankari.getSijaintiX()].length) {
-            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() + 1].isHuoneOlemassa()) {
+            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() + 1].getKuvaus() != null) {
                 sankari.setSijaintiY(sankari.getSijaintiY() + 1);
             } else {
                 Tuloste.virheellinenSuunta();
             }
         } else if (suunta.equals("itä")
                 && this.sankari.getSijaintiX() < this.huoneet.length) {
-            if (this.huoneet[this.sankari.getSijaintiX() + 1][this.sankari.getSijaintiY()].isHuoneOlemassa()) {
+            if (this.huoneet[this.sankari.getSijaintiX() + 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
                 sankari.setSijaintiX(sankari.getSijaintiX() + 1);
             } else {
                 Tuloste.virheellinenSuunta();
             }
         } else if (suunta.equals("etelä")
                 && this.sankari.getSijaintiY() - 1 >= 0) {
-            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() - 1].isHuoneOlemassa()) {
+            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() - 1].getKuvaus() != null) {
                 sankari.setSijaintiY(sankari.getSijaintiY() - 1);
             } else {
                 Tuloste.virheellinenSuunta();
             }
         } else if (suunta.equals("länsi")
                 && this.sankari.getSijaintiX() - 1 >= 0) {
-            if (this.huoneet[this.sankari.getSijaintiX() - 1][this.sankari.getSijaintiY()].isHuoneOlemassa()) {
+            if (this.huoneet[this.sankari.getSijaintiX() - 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
                 sankari.setSijaintiX(sankari.getSijaintiX() - 1);
             } else {
                 Tuloste.virheellinenSuunta();
@@ -68,11 +68,12 @@ public class TyrmaTehdas {
 
     private void huoneidenLuonti() {
         Huone aloitusHuone = new Huone("Olet Tuhkimon omassa tunkkaisessa komerossa. "
-                + "Huoneessa on kulunut sänky länsiseinustalla, pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
+                + "Huoneessa on kulunut sänky länsiseinustalla, "
+                + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
         this.huoneet[0][0] = aloitusHuone;
         Huone kaytava = new Huone("Olet keittiöön menevällä käytävällä.");
         this.huoneet[0][1] = kaytava;
-        Huone testiHuone = new Huone("Pääsit testi huoneeseen");
+        Huone testiHuone = new Huone("Tämä on testi huone");
         this.huoneet[1][0] = testiHuone;
     }
 
@@ -95,4 +96,17 @@ public class TyrmaTehdas {
             }
         }
     }
+
+    public Huone[][] getHuoneet() {
+        return huoneet;
+    }
+
+    public Scanner getLukija() {
+        return lukija;
+    }
+
+    public Henkilo getSankari() {
+        return sankari;
+    }
+
 }
