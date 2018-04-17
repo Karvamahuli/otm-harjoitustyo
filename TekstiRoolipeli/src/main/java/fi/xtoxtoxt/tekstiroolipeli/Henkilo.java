@@ -1,21 +1,26 @@
 package fi.xtoxtoxt.tekstiroolipeli;
 
+import java.util.HashMap;
+
 public class Henkilo {
 
     private String nimi;
     private int sijaintiX;
     private int sijaintiY;
+    private HashMap<String, Boolean> esineet;
 
     public Henkilo(String nimi, int sijaintiX, int sijaintiY) {
         this.nimi = nimi;
         this.sijaintiX = sijaintiX;
         this.sijaintiY = sijaintiY;
+        this.esineet = luoEsinePaikat();
     }
 
     public Henkilo(String nimi) {
         this.nimi = nimi;
         this.sijaintiX = 0;
         this.sijaintiY = 0;
+        this.esineet = luoEsinePaikat();
     }
 
     public String getNimi() {
@@ -49,6 +54,23 @@ public class Henkilo {
 
     public String koordinaateissa() {
         return this.sijaintiX + ", " + this.sijaintiY;
+    }
+
+    private HashMap luoEsinePaikat() {
+        HashMap<String, Boolean> esinePaikat = new HashMap<>();
+        esinePaikat.put("avain", false);
+
+        return esinePaikat;
+    }
+
+    public HashMap<String, Boolean> getEsineet() {
+        return esineet;
+    }
+
+    public void omistaaEsineen(String esine) {
+        if (this.esineet.entrySet().stream().anyMatch(asia -> asia.getKey().equals(esine))) {
+            this.esineet.put(esine, Boolean.TRUE);
+        }
     }
 
     @Override

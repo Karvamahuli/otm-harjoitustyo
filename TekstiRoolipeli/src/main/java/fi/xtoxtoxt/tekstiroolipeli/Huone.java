@@ -12,7 +12,7 @@ public class Huone {
     }
 
     public String getKuvaus() {
-        return kuvaus;
+        return this.kuvaus;
     }
 
     public void setKuvaus(String kuvaus) {

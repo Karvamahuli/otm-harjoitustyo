@@ -31,17 +31,11 @@ public class HuoneTest {
     @Test
     public void huoneenLuontiTyhjallaKonstruktorilla() {
         Huone huone = new Huone();
-        assertEquals(null, huone.getKuvaus());
+        assertEquals(null, huone.toString());
     }
 
     @Test
     public void huoneenLuontiKonstruktorilla() {
-        Huone huone = new Huone("kuvaus");
-        assertEquals("kuvaus", huone.getKuvaus());
-    }
-
-    @Test
-    public void huoneenToString() {
         Huone huone = new Huone("kuvaus");
         assertEquals("kuvaus", huone.toString());
     }

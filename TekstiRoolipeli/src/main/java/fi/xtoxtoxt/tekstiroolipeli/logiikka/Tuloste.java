@@ -6,7 +6,7 @@ public class Tuloste {
         System.out.println("Tässä pelin alkuteksti\n");
     }
 
-    public static void nimenValinta() {
+    public static void nimenValintaOhje() {
         System.out.format("Mikä on mahtavan sankarisi nimi? \n");
     }
 
@@ -28,9 +28,9 @@ public class Tuloste {
     public static void virheellinenSuunta() {
         System.out.println("Valittuun suuntaan ei ole reittiä.");
     }
-    
+
     public static void virheellinenKomento(String syote) {
-        System.out.println("Antamasi komento \""+syote+"\" on virheellinen");
+        System.out.println("Antamasi komento \"" + syote + "\" on virheellinen");
     }
-    
+
 }

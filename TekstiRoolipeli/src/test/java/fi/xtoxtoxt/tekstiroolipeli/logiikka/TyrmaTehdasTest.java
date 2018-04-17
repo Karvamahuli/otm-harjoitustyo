@@ -1,6 +1,9 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
-import fi.xtoxtoxt.tekstiroolipeli.Huone;
+import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,12 +37,24 @@ public class TyrmaTehdasTest {
 
     @Test
     public void tyrmanKonstruktorinHuoneidenTesti() {
-        for (int x = 0; x < 5; x++) {
-            for (int y = 0; y < 5; y++) {
+        for (int x = 0; x < tyrma.getHuoneet().length; x++) {
+            for (int y = 0; y < tyrma.getHuoneet()[x].length; y++) {
                 assertEquals(null, tyrma.getHuoneet()[x][y].getKuvaus());
             }
         }
     }
+
+//    @Test
+//    public void hahmonLuondaanOikein() {
+//        String nimi = "Sakari";
+//        InputStream is = System.in;
+//        System.setIn(new ByteArrayInputStream(nimi.getBytes()));
+//        Scanner lukija = tyrma.getLukija();
+//        System.setIn(is);
+//        tyrma.hahmonLuonti();
+//        Henkilo sankari = new Henkilo(nimi);
+//        assertEquals(sankari, tyrma.getSankari());
+//    }
 
 //    @Test
 //    public void huoneidenLuonminen() {

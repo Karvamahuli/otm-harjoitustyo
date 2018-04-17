@@ -28,7 +28,8 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>fi/xtoxtoxt/tekstiroolipeli/logiikka/TekstiRoolipeli/*</exclude>
+                        <exclude>fi/xtoxtoxt/tekstiroolipeli/logiikka/TekstiRoolipeli.class</exclude>
+                        <exclude>fi/xtoxtoxt/tekstiroolipeli/logiikka/Tuloste.class</exclude>
                     </excludes>
                 </configuration>   
                 <executions>

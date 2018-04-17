@@ -60,7 +60,7 @@ public class TyrmaTehdas {
     }
 
     public void hahmonLuonti() {
-        Tuloste.nimenValinta();
+        Tuloste.nimenValintaOhje();
         String nimi = lukija.nextLine();
         Henkilo paahenkilo = new Henkilo(nimi);
         this.setSankari(paahenkilo);

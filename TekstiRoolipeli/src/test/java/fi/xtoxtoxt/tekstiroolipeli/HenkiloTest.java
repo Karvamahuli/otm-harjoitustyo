@@ -1,5 +1,6 @@
 package fi.xtoxtoxt.tekstiroolipeli;
 
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -57,5 +58,24 @@ public class HenkiloTest {
         Henkilo sakari = new Henkilo("Sakari");
         sakari.siirraKohtaan(2, 2);
         assertEquals("2, 2", sakari.koordinaateissa());
+    }
+
+    @Test
+    public void esineListausLuodaanOikein() {
+        Henkilo sakari = new Henkilo("Sakari");
+        assertEquals(false, sakari.getEsineet().get("avain"));
+    }
+
+    @Test
+    public void esineetOlemassa() {
+        Henkilo sakari = new Henkilo("Sakari");
+        assertTrue(sakari.getEsineet() instanceof HashMap);
+    }
+
+    @Test
+    public void esineenLisays() {
+        Henkilo sakari = new Henkilo("Sakari");
+        sakari.omistaaEsineen("avain");
+        assertEquals(true, sakari.getEsineet().get("avain"));
     }
 }
