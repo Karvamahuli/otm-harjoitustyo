@@ -59,6 +59,7 @@ public class Henkilo {
     private HashMap luoEsinePaikat() {
         HashMap<String, Boolean> esinePaikat = new HashMap<>();
         esinePaikat.put("avain", false);
+        esinePaikat.put("karkkilaatikko", false);
 
         return esinePaikat;
     }
@@ -67,10 +68,14 @@ public class Henkilo {
         return esineet;
     }
 
-    public void omistaaEsineen(String esine) {
+    public void saaOmistukseen(String esine) {
         if (this.esineet.entrySet().stream().anyMatch(asia -> asia.getKey().equals(esine))) {
             this.esineet.put(esine, Boolean.TRUE);
         }
+    }
+
+    public boolean omistaaEsineen(String esine) {
+        return this.esineet.getOrDefault(esine, Boolean.FALSE);
     }
 
     @Override

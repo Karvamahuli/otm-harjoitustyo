@@ -20,39 +20,56 @@ public class TyrmaTehdas {
         this.lukija = new Scanner(System.in);
     }
 
-    public void liikuIlmansuuntaan(String suunta) {
-        if (suunta.equals("pohjoinen")
-                && this.sankari.getSijaintiY() + 1 < this.huoneet[this.sankari.getSijaintiX()].length) {
+    public void liikuPohjoiseen() {
+        if (this.sankari.getSijaintiY() + 1 < this.huoneet[this.sankari.getSijaintiX()].length) {
             if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() + 1].getKuvaus() != null) {
                 sankari.setSijaintiY(sankari.getSijaintiY() + 1);
-            } else {
-                Tuloste.virheellinenSuunta();
-            }
-        } else if (suunta.equals("itä")
-                && this.sankari.getSijaintiX() < this.huoneet.length) {
-            if (this.huoneet[this.sankari.getSijaintiX() + 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
-                sankari.setSijaintiX(sankari.getSijaintiX() + 1);
-            } else {
-                Tuloste.virheellinenSuunta();
-            }
-        } else if (suunta.equals("etelä")
-                && this.sankari.getSijaintiY() - 1 >= 0) {
-            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() - 1].getKuvaus() != null) {
-                sankari.setSijaintiY(sankari.getSijaintiY() - 1);
-            } else {
-                Tuloste.virheellinenSuunta();
-            }
-        } else if (suunta.equals("länsi")
-                && this.sankari.getSijaintiX() - 1 >= 0) {
-            if (this.huoneet[this.sankari.getSijaintiX() - 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
-                sankari.setSijaintiX(sankari.getSijaintiX() - 1);
+                Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
             } else {
                 Tuloste.virheellinenSuunta();
             }
         } else {
             Tuloste.virheellinenSuunta();
         }
-        System.out.println(sankari.koordinaateissa());
+    }
+
+    public void liikuItaan() {
+        if (this.sankari.getSijaintiX() < this.huoneet.length) {
+            if (this.huoneet[this.sankari.getSijaintiX() + 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
+                sankari.setSijaintiX(sankari.getSijaintiX() + 1);
+                Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
+            } else {
+                Tuloste.virheellinenSuunta();
+            }
+        } else {
+            Tuloste.virheellinenSuunta();
+        }
+    }
+
+    public void liikuEtelaan() {
+        if (this.sankari.getSijaintiY() - 1 >= 0) {
+            if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() - 1].getKuvaus() != null) {
+                sankari.setSijaintiY(sankari.getSijaintiY() - 1);
+                Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
+            } else {
+                Tuloste.virheellinenSuunta();
+            }
+        } else {
+            Tuloste.virheellinenSuunta();
+        }
+    }
+
+    public void liikuLanteen() {
+        if (this.sankari.getSijaintiX() - 1 >= 0) {
+            if (this.huoneet[this.sankari.getSijaintiX() - 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
+                sankari.setSijaintiX(sankari.getSijaintiX() - 1);
+                Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
+            } else {
+                Tuloste.virheellinenSuunta();
+            }
+        } else {
+            Tuloste.virheellinenSuunta();
+        }
     }
 
     private void setSankari(Henkilo sankari) {
@@ -75,26 +92,78 @@ public class TyrmaTehdas {
         this.huoneet[0][1] = kaytava;
         Huone testiHuone = new Huone("Tämä on testi huone");
         this.huoneet[1][0] = testiHuone;
+        Huone keittio = new Huone("Olet talon suuressa keittiössä. Ruoan tuoksu osuu kantautuu nenääsi. "
+                + "\nIso paha äiti seisoo hellan äärellä "
+                + "ja tekee ruokaa eikä huomaa kun astut huoneeseen.");
+        this.huoneet[1][1] = keittio;
+        Huone ruokakomero = new Huone("Olet talon ahtaassa ruokakomerossa. Näet ympärilläsi erilaisia säilykkeitä "
+                + "\nja mausteita ynnä muita ruokatarvikkeita. Näet pohjois pädyssä olevan kaapin päällä äidin "
+                + "\nkarkkilaatikon. Se on kuitenkin melko korkealla.");
+        this.huoneet[1][2] = ruokakomero;
     }
 
     public void kaynnistaPeli() {
         this.huoneidenLuonti();
         Tuloste.ohjeet();
+        Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
         while (true) {
-            Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
-            String syote = this.lukija.nextLine();
+
+            if (voititPelin()) {
+                break;
+            }
+
+            String alkuperainenSyote = this.lukija.nextLine();
+            String syote = alkuperainenSyote.toLowerCase();
             if (syote.equals("pohjoinen") || syote.equals("p")) {
-                this.liikuIlmansuuntaan("pohjoinen");
+                this.liikuPohjoiseen();
             } else if (syote.equals("itä") || syote.equals("i")) {
-                this.liikuIlmansuuntaan("itä");
+                this.liikuItaan();
             } else if (syote.equals("etelä") || syote.equals("e")) {
-                this.liikuIlmansuuntaan("etelä");
+                this.liikuEtelaan();
             } else if (syote.equals("länsi") || syote.equals("l")) {
-                this.liikuIlmansuuntaan("länsi");
+                this.liikuLanteen();
+            } else if (syote.startsWith("nosta ") || syote.startsWith("poimi ")
+                    || syote.startsWith("nouki ")) {
+                this.nostaEsine(syote);
             } else {
-                Tuloste.virheellinenKomento(syote);
+                Tuloste.virheellinenKomento(alkuperainenSyote);
             }
         }
+    }
+
+    public void nostaEsine(String syote) {
+        if (syote.contains("avain") && this.sankari.getSijaintiX() == 0
+                && this.sankari.getSijaintiY() == 1) {
+
+            if (!this.sankari.omistaaEsineen("avain")) {
+                this.sankari.saaOmistukseen("avain");
+                Tuloste.nostaEsine(this.sankari.getNimi(), "avain");
+            } else {
+                Tuloste.omistatJoEsineen("avain");
+            }
+
+        } else if (syote.contains("karkkilaatikko") || syote.contains("laatikko")
+                && this.sankari.getSijaintiX() == 1 && this.sankari.getSijaintiY() == 2) {
+
+            if (!this.sankari.omistaaEsineen("karkkilaatikko")) {
+                this.sankari.saaOmistukseen("karkkilaatikko");
+                Tuloste.nostaEsine(this.sankari.getNimi(), "karkkilaatikko");
+            } else {
+                Tuloste.omistatJoEsineen("karkkilaatikko");
+            }
+
+        } else {
+            String esine = syote.substring(6);
+            Tuloste.esinettaEiLoytynyt(esine);
+        }
+    }
+
+    public boolean voititPelin() {
+        if (this.sankari.getSijaintiX() == 0 && this.sankari.getSijaintiY() == 0
+                && this.sankari.omistaaEsineen("karkkilaatikko")) {
+            return true;
+        }
+        return false;
     }
 
     public Huone[][] getHuoneet() {

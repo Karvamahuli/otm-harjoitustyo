@@ -30,7 +30,19 @@ public class Tuloste {
     }
 
     public static void virheellinenKomento(String syote) {
-        System.out.println("Antamasi komento \"" + syote + "\" on virheellinen");
+        System.out.println("Antamasi komentoa \"" + syote + "\" ei tunnistettu.");
+    }
+
+    public static void nostaEsine(String nimi, String esine) {
+        System.out.println(nimi + " nosti esineen " + esine + ".");
+    }
+
+    public static void esinettaEiLoytynyt(String esine) {
+        System.out.println("Esinettä " + esine + " ei löytynyt huoneesta.");
+    }
+
+    public static void omistatJoEsineen(String esine) {
+        System.out.println("Omistat jo esineen " + esine);
     }
 
 }

@@ -75,7 +75,7 @@ public class HenkiloTest {
     @Test
     public void esineenLisays() {
         Henkilo sakari = new Henkilo("Sakari");
-        sakari.omistaaEsineen("avain");
+        sakari.saaOmistukseen("avain");
         assertEquals(true, sakari.getEsineet().get("avain"));
     }
 }
