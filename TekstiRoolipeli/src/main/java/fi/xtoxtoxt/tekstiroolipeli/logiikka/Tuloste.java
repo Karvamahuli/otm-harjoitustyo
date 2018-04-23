@@ -21,8 +21,6 @@ public class Tuloste {
                 + "\"i\" tai \"itä \" liikkuaksesi itään.\n"
                 + "\"e\" tai \"etelä \" liikkuaksesi etelään.\n"
                 + "\"l\" tai \"länsi \" liikkuaksesi länteen.\n");
-        System.out.println("Tällä hetkellä on olemassa vain kaksi huonetta: "
-                + "\nkoordinaateissa (0,0) ja siitä pohjoiseen koordinaateissa (0,1)");
     }
 
     public static void virheellinenSuunta() {
@@ -44,8 +42,8 @@ public class Tuloste {
     public static void omistatJoEsineen(String esine) {
         System.out.println("Omistat jo esineen " + esine);
     }
-    
-    public static void avainPuuttuu(){
+
+    public static void avainPuuttuu() {
         System.out.println("Tarvitset avaimen avataksesi pohjoispuolella olevan oven.");
     }
 
