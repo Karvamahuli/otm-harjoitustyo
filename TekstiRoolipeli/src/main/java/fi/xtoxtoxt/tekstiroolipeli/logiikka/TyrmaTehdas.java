@@ -21,7 +21,14 @@ public class TyrmaTehdas {
     }
 
     public void liikuPohjoiseen() {
-        if (this.sankari.getSijaintiY() + 1 < this.huoneet[this.sankari.getSijaintiX()].length) {
+        if (this.sankari.getSijaintiX() == 1 && this.sankari.getSijaintiY() == 1) {
+            if (this.sankari.omistaaEsineen("avain")) {
+                sankari.setSijaintiY(sankari.getSijaintiY() + 1);
+                Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
+            } else {
+                Tuloste.avainPuuttuu();
+            }
+        } else if (this.sankari.getSijaintiY() + 1 < this.huoneet[this.sankari.getSijaintiX()].length) {
             if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() + 1].getKuvaus() != null) {
                 sankari.setSijaintiY(sankari.getSijaintiY() + 1);
                 Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
@@ -88,15 +95,15 @@ public class TyrmaTehdas {
                 + "Huoneessa on kulunut sänky länsiseinustalla, "
                 + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
         this.huoneet[0][0] = aloitusHuone;
-        Huone kaytava = new Huone("Olet keittiöön menevällä käytävällä.");
+        Huone kaytava = new Huone("Olet keittiöön menevällä käytävällä. Maassa olevan pitkän maton vieressä on jotain kiiltävää. "
+                + "\nTarkemmalla tarkastelulla huomaat, että sen olevan avain.");
         this.huoneet[0][1] = kaytava;
-        Huone testiHuone = new Huone("Tämä on testi huone");
-        this.huoneet[1][0] = testiHuone;
         Huone keittio = new Huone("Olet talon suuressa keittiössä. Ruoan tuoksu osuu kantautuu nenääsi. "
                 + "\nIso paha äiti seisoo hellan äärellä "
                 + "ja tekee ruokaa eikä huomaa kun astut huoneeseen.");
         this.huoneet[1][1] = keittio;
-        Huone ruokakomero = new Huone("Olet talon ahtaassa ruokakomerossa. Näet ympärilläsi erilaisia säilykkeitä "
+        Huone ruokakomero = new Huone("Saat avattua oven nostamallasi avaimella ja pääset talon ahtaassa ruokakomerossa. "
+                + "Näet ympärilläsi erilaisia säilykkeitä "
                 + "\nja mausteita ynnä muita ruokatarvikkeita. Näet pohjois pädyssä olevan kaapin päällä äidin "
                 + "\nkarkkilaatikon. Se on kuitenkin melko korkealla.");
         this.huoneet[1][2] = ruokakomero;
@@ -113,7 +120,7 @@ public class TyrmaTehdas {
             }
 
             String alkuperainenSyote = this.lukija.nextLine();
-            String syote = alkuperainenSyote.toLowerCase();
+            String syote = alkuperainenSyote.toLowerCase().trim();
             if (syote.equals("pohjoinen") || syote.equals("p")) {
                 this.liikuPohjoiseen();
             } else if (syote.equals("itä") || syote.equals("i")) {
@@ -123,7 +130,7 @@ public class TyrmaTehdas {
             } else if (syote.equals("länsi") || syote.equals("l")) {
                 this.liikuLanteen();
             } else if (syote.startsWith("nosta ") || syote.startsWith("poimi ")
-                    || syote.startsWith("nouki ")) {
+                    || syote.startsWith("nouki ") || syote.startsWith("ota ")) {
                 this.nostaEsine(syote);
             } else {
                 Tuloste.virheellinenKomento(alkuperainenSyote);
@@ -132,7 +139,9 @@ public class TyrmaTehdas {
     }
 
     public void nostaEsine(String syote) {
-        if (syote.contains("avain") && this.sankari.getSijaintiX() == 0
+        String[] esineSyote = syote.split(" ", 2);
+        String esine = esineSyote[1];
+        if (esine.equals("avain") && this.sankari.getSijaintiX() == 0
                 && this.sankari.getSijaintiY() == 1) {
 
             if (!this.sankari.omistaaEsineen("avain")) {
@@ -142,7 +151,7 @@ public class TyrmaTehdas {
                 Tuloste.omistatJoEsineen("avain");
             }
 
-        } else if (syote.contains("karkkilaatikko") || syote.contains("laatikko")
+        } else if (esine.equals("karkkilaatikko") || syote.contains("laatikko")
                 && this.sankari.getSijaintiX() == 1 && this.sankari.getSijaintiY() == 2) {
 
             if (!this.sankari.omistaaEsineen("karkkilaatikko")) {
@@ -153,7 +162,6 @@ public class TyrmaTehdas {
             }
 
         } else {
-            String esine = syote.substring(6);
             Tuloste.esinettaEiLoytynyt(esine);
         }
     }

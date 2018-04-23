@@ -38,11 +38,15 @@ public class Tuloste {
     }
 
     public static void esinettaEiLoytynyt(String esine) {
-        System.out.println("Esinettä " + esine + " ei löytynyt huoneesta.");
+        System.out.println("Esinettä \"" + esine + "\" ei löytynyt huoneesta.");
     }
 
     public static void omistatJoEsineen(String esine) {
         System.out.println("Omistat jo esineen " + esine);
+    }
+    
+    public static void avainPuuttuu(){
+        System.out.println("Tarvitset avaimen avataksesi pohjoispuolella olevan oven.");
     }
 
 }
