@@ -8,7 +8,6 @@ public class TyrmaTehdas {
 
     private Huone[][] huoneet;
     private Henkilo sankari;
-    private Scanner lukija;
 
     public TyrmaTehdas() {
         this.huoneet = new Huone[5][5];
@@ -17,7 +16,6 @@ public class TyrmaTehdas {
                 this.huoneet[x][y] = new Huone();
             }
         }
-        this.lukija = new Scanner(System.in);
     }
 
     public void liikuPohjoiseen() {
@@ -83,14 +81,12 @@ public class TyrmaTehdas {
         this.sankari = sankari;
     }
 
-    public void hahmonLuonti() {
-        Tuloste.nimenValintaOhje();
-        String nimi = lukija.nextLine();
+    public void hahmonLuonti(String nimi) {
         Henkilo paahenkilo = new Henkilo(nimi);
         this.setSankari(paahenkilo);
     }
 
-    private void huoneidenLuonti() {
+    public void huoneidenLuonti() {
         Huone aloitusHuone = new Huone("Olet Tuhkimon omassa tunkkaisessa komerossa. "
                 + "Huoneessa on kulunut sänky länsiseinustalla, "
                 + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
@@ -109,32 +105,21 @@ public class TyrmaTehdas {
         this.huoneet[1][2] = ruokakomero;
     }
 
-    public void kaynnistaPeli() {
-        this.huoneidenLuonti();
-        Tuloste.ohjeet();
-        Tuloste.huoneenKuvaus(this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY()].getKuvaus());
-        while (true) {
-
-            if (voititPelin()) {
-                break;
-            }
-
-            String alkuperainenSyote = this.lukija.nextLine();
-            String syote = alkuperainenSyote.toLowerCase().trim();
-            if (syote.equals("pohjoinen") || syote.equals("p")) {
-                this.liikuPohjoiseen();
-            } else if (syote.equals("itä") || syote.equals("i")) {
-                this.liikuItaan();
-            } else if (syote.equals("etelä") || syote.equals("e")) {
-                this.liikuEtelaan();
-            } else if (syote.equals("länsi") || syote.equals("l")) {
-                this.liikuLanteen();
-            } else if (syote.startsWith("nosta ") || syote.startsWith("poimi ")
-                    || syote.startsWith("nouki ") || syote.startsWith("ota ")) {
-                this.nostaEsine(syote);
-            } else {
-                Tuloste.virheellinenKomento(alkuperainenSyote);
-            }
+    public void seuraavaAskel(String alkuperainenSyote) {
+        String syote = alkuperainenSyote.toLowerCase().trim();
+        if (syote.equals("pohjoinen") || syote.equals("p")) {
+            this.liikuPohjoiseen();
+        } else if (syote.equals("itä") || syote.equals("i")) {
+            this.liikuItaan();
+        } else if (syote.equals("etelä") || syote.equals("e")) {
+            this.liikuEtelaan();
+        } else if (syote.equals("länsi") || syote.equals("l")) {
+            this.liikuLanteen();
+        } else if (syote.startsWith("nosta ") || syote.startsWith("poimi ")
+                || syote.startsWith("nouki ") || syote.startsWith("ota ")) {
+            this.nostaEsine(syote);
+        } else {
+            Tuloste.virheellinenKomento(alkuperainenSyote);
         }
     }
 
@@ -167,19 +152,12 @@ public class TyrmaTehdas {
     }
 
     public boolean voititPelin() {
-        if (this.sankari.getSijaintiX() == 0 && this.sankari.getSijaintiY() == 0
-                && this.sankari.omistaaEsineen("karkkilaatikko")) {
-            return true;
-        }
-        return false;
+        return this.sankari.getSijaintiX() == 0 && this.sankari.getSijaintiY() == 0
+                && this.sankari.omistaaEsineen("karkkilaatikko");
     }
 
     public Huone[][] getHuoneet() {
         return huoneet;
-    }
-
-    public Scanner getLukija() {
-        return lukija;
     }
 
     public Henkilo getSankari() {

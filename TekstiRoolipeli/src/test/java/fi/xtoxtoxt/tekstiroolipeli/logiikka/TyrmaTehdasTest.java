@@ -43,25 +43,4 @@ public class TyrmaTehdasTest {
             }
         }
     }
-
-//    @Test
-//    public void hahmonLuondaanOikein() {
-//        String nimi = "Sakari";
-//        InputStream is = System.in;
-//        System.setIn(new ByteArrayInputStream(nimi.getBytes()));
-//        Scanner lukija = tyrma.getLukija();
-//        System.setIn(is);
-//        tyrma.hahmonLuonti();
-//        Henkilo sankari = new Henkilo(nimi);
-//        assertEquals(sankari, tyrma.getSankari());
-//    }
-
-//    @Test
-//    public void huoneidenLuonminen() {
-//        tyrma.kaynnistaPeli();
-//        assertEquals("Olet Tuhkimon omassa tunkkaisessa komerossa. "
-//                + "Huoneessa on kulunut sänky länsiseinustalla, "
-//                + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.",
-//                tyrma.getHuoneet()[0][0].getKuvaus());
-//    }
 }
