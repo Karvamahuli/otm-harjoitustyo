@@ -97,7 +97,7 @@ public class TekstiRoolipeli extends Application {
 
         nappi.setOnAction(aktivointi -> {
 
-            painettu(nappi);
+            nappiaPainettu();
 
             if (tyrma.voititPelin()) {
 //                Tulevaisuudessa tähän sankarin nimen lisääminen Hall of Fameen
@@ -109,7 +109,7 @@ public class TekstiRoolipeli extends Application {
             @Override
             public void handle(KeyEvent event) {
 
-                painettu(nappi);
+                nappiaPainettu();
 
                 if (tyrma.voititPelin()) {
 //                Tulevaisuudessa tähän sankarin nimen lisääminen Hall of Fameen
@@ -128,7 +128,7 @@ public class TekstiRoolipeli extends Application {
         ikkuna.show();
     }
 
-    public void painettu(Button nappi) {
+    public void nappiaPainettu() {
         String syote = tekstikentta.getText();
         tekstikentta.setText("");
         Text lisattava = new Text("\n\n" + syote);
