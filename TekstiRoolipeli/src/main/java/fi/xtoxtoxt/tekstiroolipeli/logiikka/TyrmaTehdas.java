@@ -136,7 +136,7 @@ public class TyrmaTehdas {
                 Tuloste.omistatJoEsineen("avain");
             }
 
-        } else if (esine.equals("karkkilaatikko") || syote.contains("laatikko")
+        } else if ((esine.equals("karkkilaatikko") || syote.contains("laatikko"))
                 && this.sankari.getSijaintiX() == 1 && this.sankari.getSijaintiY() == 2) {
 
             if (!this.sankari.omistaaEsineen("karkkilaatikko")) {
