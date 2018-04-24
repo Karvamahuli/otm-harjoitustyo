@@ -2,7 +2,6 @@ package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
 import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
 import fi.xtoxtoxt.tekstiroolipeli.Huone;
-import java.util.Scanner;
 
 public class TyrmaTehdas {
 
@@ -92,21 +91,21 @@ public class TyrmaTehdas {
                 + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
         this.huoneet[0][0] = aloitusHuone;
         Huone kaytava = new Huone("Olet keittiöön menevällä käytävällä. Maassa olevan pitkän maton vieressä on jotain kiiltävää. "
-                + "\nTarkemmalla tarkastelulla huomaat, että sen olevan avain.");
+                + "Tarkemmalla tarkastelulla huomaat, että sen olevan avain.");
         this.huoneet[0][1] = kaytava;
         Huone keittio = new Huone("Olet talon suuressa keittiössä. Ruoan tuoksu osuu kantautuu nenääsi. "
-                + "\nIso paha äiti seisoo hellan äärellä "
+                + "Iso paha äiti seisoo hellan äärellä "
                 + "ja tekee ruokaa eikä huomaa kun astut huoneeseen.");
         this.huoneet[1][1] = keittio;
         Huone ruokakomero = new Huone("Saat avattua oven nostamallasi avaimella ja pääset talon ahtaassa ruokakomerossa. "
                 + "Näet ympärilläsi erilaisia säilykkeitä "
-                + "\nja mausteita ynnä muita ruokatarvikkeita. Näet pohjois pädyssä olevan kaapin päällä äidin "
-                + "\nkarkkilaatikon. Se on kuitenkin melko korkealla.");
+                + "ja mausteita ynnä muita ruokatarvikkeita. Näet pohjois pädyssä olevan kaapin päällä äidin "
+                + "karkkilaatikon. Se on kuitenkin melko korkealla.");
         this.huoneet[1][2] = ruokakomero;
     }
 
     public void seuraavaAskel(String alkuperainenSyote) {
-        String syote = alkuperainenSyote.toLowerCase().trim();
+        String syote = alkuperainenSyote.trim().toLowerCase();
         if (syote.equals("pohjoinen") || syote.equals("p")) {
             this.liikuPohjoiseen();
         } else if (syote.equals("itä") || syote.equals("i")) {

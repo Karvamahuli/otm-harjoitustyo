@@ -1,9 +1,6 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
 import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,6 +26,7 @@ public class TyrmaTehdasTest {
     @Before
     public void setUp() {
         tyrma = new TyrmaTehdas();
+        tyrma.hahmonLuonti("Sakari");
     }
 
     @After
@@ -43,4 +41,26 @@ public class TyrmaTehdasTest {
             }
         }
     }
+
+    @Test
+    public void hahmonLuonti() {
+        assertTrue(tyrma.getSankari() instanceof Henkilo);
+        assertEquals("Sakari", tyrma.getSankari().getNimi());
+    }
+
+    @Test
+    public void huoneideinLuonti() {
+        tyrma.huoneidenLuonti();
+        assertEquals("Olet Tuhkimon omassa tunkkaisessa komerossa. "
+                + "Huoneessa on kulunut sänky länsiseinustalla, "
+                + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.", tyrma.getHuoneet()[0][0].getKuvaus());
+    }
+
+//    @Test
+//    public void seuraavaAskelPohjoiseen() {
+//        tyrma.huoneidenLuonti();
+//        tyrma.seuraavaAskel("p");
+//        assertEquals(0, tyrma.getSankari().getSijaintiX());
+//        assertEquals(1, tyrma.getSankari().getSijaintiY());
+//    }
 }
