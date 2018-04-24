@@ -1,5 +1,5 @@
-# Tuhkimon *Tuoreet* Turinat
-Vanha kunnon tekstipohjainen roolipeli, jossa kuljet lapsi Tuhkimon jalanjälkiä ja kohtaat vaarallisia tilanteita ja palkitsevia hetkiä. 
+## Tuhkimon *Tuoreet* Turinat
+Tässä Gitissä on javalla kirjoitettu tekstiroolipeli. Ensin valitaan seikkailevalle sankarille nimi, minkä jälkeen päästään itse peliin kirjoittamaan komentoja sankarille, joka joko tottelee niitä tai epäonnistuu. Pelissä on tarkoitus päästä äidin karkkilaatikolle ja ottaa se parempaan talteen.
 
 ### Dokumentaatio
 
@@ -8,6 +8,10 @@ Vanha kunnon tekstipohjainen roolipeli, jossa kuljet lapsi Tuhkimon jalanjälki�
 [Arkkitehtuuri.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 [Työaikakirjanpito](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+
+## Releaset
+
+[Viikko 5](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/viikko5)
 
 ### Testaus
 
@@ -24,6 +28,16 @@ mvn jacoco:report
 ```
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto _target/site/jacoco/index.html_
+
+### Suoritettavan jarin generointi
+
+Komento
+
+```
+mvn package
+```
+
+generoi hakemistoon _target_ suoritettavan jar-tiedoston _TekstiRoolipeli-1.0-SNAPSHOT.jar_
 
 ### Checkstyle
 
