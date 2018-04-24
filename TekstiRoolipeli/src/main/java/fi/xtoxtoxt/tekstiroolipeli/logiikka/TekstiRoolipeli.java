@@ -1,9 +1,11 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -103,11 +105,26 @@ public class TekstiRoolipeli extends Application {
             }
         });
 
+        lisaysKentta.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+
+                painettu(nappi);
+
+                if (tyrma.voititPelin()) {
+//                Tulevaisuudessa tähän sankarin nimen lisääminen Hall of Fameen
+                    ikkuna.close();
+                }
+            }
+        });
+
 //        Ikkunoiden rakennus
         aloitusNakyma = new Scene(aloitusAsettelu);
         hahmonLuontiNakyma = new Scene(hahmonLuontiAsettelu);
         peliNakyma = new Scene(peliAsettelu);
+
         ikkuna.setScene(aloitusNakyma);
+
         ikkuna.show();
     }
 
