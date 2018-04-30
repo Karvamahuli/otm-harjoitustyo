@@ -1,5 +1,9 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
+import fi.xtoxtoxt.tekstiroolipeli.dao.TaulukkoDao;
+import fi.xtoxtoxt.tekstiroolipeli.dao.Tietokanta;
+import java.util.Iterator;
+import java.util.List;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -21,8 +25,11 @@ public class TekstiRoolipeli extends Application {
     private TyrmaTehdas tyrma;
 
     private Scene aloitusNakyma;
+    private Scene taulukkoNakyma;
     private Scene hahmonLuontiNakyma;
     private Scene peliNakyma;
+
+    private TaulukkoDao taulukkoDao;
 
     @Override
     public void init() throws Exception {
@@ -30,6 +37,9 @@ public class TekstiRoolipeli extends Application {
         tekstikentta = new TextField();
 
         tyrma = new TyrmaTehdas();
+
+        Tietokanta tietokanta = new Tietokanta("jdbc:sqlite:taulukko.db");
+        taulukkoDao = new TaulukkoDao(tietokanta);
     }
 
     @Override
@@ -40,15 +50,43 @@ public class TekstiRoolipeli extends Application {
         aloitusAsettelu.setPrefSize(400, 400);
 
         Button aloitusNappi = new Button("Aloita peli");
+        Button aloitusNappiTaulukkoon = new Button("Hall of Fame");
         Text aloitusTeksti = new Text(Tuloste.alkuteksti());
 
         aloitusNappi.setOnAction(aktivointi -> {
 
             ikkuna.setScene(hahmonLuontiNakyma);
         });
+        
+        aloitusNappiTaulukkoon.setOnAction(aktivointi -> {
+
+            ikkuna.setScene(taulukkoNakyma);
+        });
 
         aloitusAsettelu.setCenter(aloitusTeksti);
         aloitusAsettelu.setBottom(aloitusNappi);
+
+//        Hall of Fame nakyman rakennus
+        BorderPane taulukkoAsettelu = new BorderPane();
+        taulukkoAsettelu.setPrefSize(400, 400);
+
+        Text taulukkoEsittelyTeksti = new Text("Pelin läpäisseiden sankarien nimet: ");
+        VBox taulukkoLista = new VBox();
+        Button taulukonTakaisinNappi = new Button("Takaisin aloitus sivulle");
+
+        List<String> taulukko = taulukkoDao.getTaulukko();
+
+        for (int i = 0; i < taulukko.size(); i++) {
+            taulukkoLista.getChildren().add(new Text(taulukko.get(i)));
+        }
+        
+        taulukonTakaisinNappi.setOnAction(aktivointi -> {
+            
+            ikkuna.setScene(aloitusNakyma);
+        });
+        
+        taulukkoAsettelu.setTop(taulukkoEsittelyTeksti);
+        taulukkoAsettelu.setCenter(taulukkoLista);
 
 //        Hahmonluonti nakyman rakennus
         BorderPane hahmonLuontiAsettelu = new BorderPane();

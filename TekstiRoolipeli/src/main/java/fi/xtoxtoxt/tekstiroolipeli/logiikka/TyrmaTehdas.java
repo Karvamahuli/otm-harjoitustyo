@@ -91,15 +91,15 @@ public class TyrmaTehdas {
                 + "pienehkö ikkuna eteläpuolella ja matala ovi pohjoisseinällä.");
         this.huoneet[0][0] = aloitusHuone;
         Huone kaytava = new Huone("Olet keittiöön menevällä käytävällä. Maassa olevan pitkän maton vieressä on jotain kiiltävää. "
-                + "Tarkemmalla tarkastelulla huomaat, että sen olevan avain.");
+                + "Tarkemmalla tarkastelulla huomaat sen olevan avain.");
         this.huoneet[0][1] = kaytava;
         Huone keittio = new Huone("Olet talon suuressa keittiössä. Ruoan tuoksu osuu kantautuu nenääsi. "
                 + "Iso paha äiti seisoo hellan äärellä "
-                + "ja tekee ruokaa eikä huomaa kun astut huoneeseen.");
+                + "ja valmistaa ruokaa eikä huomaa kun astut huoneeseen.");
         this.huoneet[1][1] = keittio;
-        Huone ruokakomero = new Huone("Saat avattua oven nostamallasi avaimella ja pääset talon ahtaassa ruokakomerossa. "
+        Huone ruokakomero = new Huone("Saat avattua oven nostamallasi avaimella ja pääset talon ahtaaseen ruokakomeroon. "
                 + "Näet ympärilläsi erilaisia säilykkeitä "
-                + "ja mausteita ynnä muita ruokatarvikkeita. Näet pohjois pädyssä olevan kaapin päällä äidin "
+                + "ja mausteita ynnä muita ruokatarvikkeita. Näet pohjoispäädyssä olevan kaapin päällä äidin "
                 + "karkkilaatikon. Se on kuitenkin melko korkealla.");
         this.huoneet[1][2] = ruokakomero;
     }

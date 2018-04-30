@@ -16,10 +16,10 @@ public class Tuloste {
 
     public static void ohjeet() {
         TekstiRoolipeli.lisaaTeksti("Liikkuaksesi alueelta toiselle kirjoita kirjoita ilmansuunta "
-                + "tai sen ensimmäinen kirjain ja paina Enteriä."
-                + "\"p\" tai \"pohjoinen \" liikkuaksesi pohjoiseen."
-                + "\"i\" tai \"itä \" liikkuaksesi itään."
-                + "\"e\" tai \"etelä \" liikkuaksesi etelään."
+                + "tai sen ensimmäinen kirjain ja paina Enteriä.\n"
+                + "\"p\" tai \"pohjoinen \" liikkuaksesi pohjoiseen.\n"
+                + "\"i\" tai \"itä \" liikkuaksesi itään.\n"
+                + "\"e\" tai \"etelä \" liikkuaksesi etelään.\n"
                 + "\"l\" tai \"länsi \" liikkuaksesi länteen.\n");
     }
 
