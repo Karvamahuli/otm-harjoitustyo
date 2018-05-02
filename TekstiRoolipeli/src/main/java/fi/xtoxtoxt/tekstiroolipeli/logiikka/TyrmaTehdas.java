@@ -17,7 +17,7 @@ public class TyrmaTehdas {
         }
     }
 
-    public void liikuPohjoiseen() {
+    private void liikuPohjoiseen() {
         if (this.sankari.getSijaintiX() == 1 && this.sankari.getSijaintiY() == 1) {
             if (this.sankari.omistaaEsineen("avain")) {
                 sankari.setSijaintiY(sankari.getSijaintiY() + 1);
@@ -37,7 +37,7 @@ public class TyrmaTehdas {
         }
     }
 
-    public void liikuItaan() {
+    private void liikuItaan() {
         if (this.sankari.getSijaintiX() < this.huoneet.length) {
             if (this.huoneet[this.sankari.getSijaintiX() + 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
                 sankari.setSijaintiX(sankari.getSijaintiX() + 1);
@@ -50,7 +50,7 @@ public class TyrmaTehdas {
         }
     }
 
-    public void liikuEtelaan() {
+    private void liikuEtelaan() {
         if (this.sankari.getSijaintiY() - 1 >= 0) {
             if (this.huoneet[this.sankari.getSijaintiX()][this.sankari.getSijaintiY() - 1].getKuvaus() != null) {
                 sankari.setSijaintiY(sankari.getSijaintiY() - 1);
@@ -63,7 +63,7 @@ public class TyrmaTehdas {
         }
     }
 
-    public void liikuLanteen() {
+    private void liikuLanteen() {
         if (this.sankari.getSijaintiX() - 1 >= 0) {
             if (this.huoneet[this.sankari.getSijaintiX() - 1][this.sankari.getSijaintiY()].getKuvaus() != null) {
                 sankari.setSijaintiX(sankari.getSijaintiX() - 1);
@@ -122,7 +122,7 @@ public class TyrmaTehdas {
         }
     }
 
-    public void nostaEsine(String syote) {
+    private void nostaEsine(String syote) {
         String[] esineSyote = syote.split(" ", 2);
         String esine = esineSyote[1];
         if (esine.equals("avain") && this.sankari.getSijaintiX() == 0
