@@ -35,7 +35,9 @@ nimi varchar(50)
 Lopputulos näyttää tulostettuna seuraavalta:
 
 Tuhkimo
+
 Harald Hirmuinen
+
 Samvais Gamgi
 
 ## Päätoiminnallisuudet
@@ -46,8 +48,7 @@ Seuraavaksi muutamia sovelluksen toiminnallisuuksia sekvenssikaaviona.
 
 <img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/Nappia%20painettu%20peliss%C3%A4.png" width="800">
  
- ja vaadittu koodi
- title Nappia painettu pelissä
+ ja vaadittu koodi "Nappia painettu pelissä"
 
 Käyttäjä->TekstiRoolipeli: painaa nappia/Enteriä pelissä \nja tekstikentässä "p"
 TekstiRoolipeli->TekstiRoolipeli: nappiaPainettu()
