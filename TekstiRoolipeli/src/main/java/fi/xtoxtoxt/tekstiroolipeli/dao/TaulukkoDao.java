@@ -25,7 +25,7 @@ public class TaulukkoDao implements Dao {
             while (tulos.next()) {
                 taulukko.add(tulos.getString("nimi"));
             }
-            
+
             tulos.close();
             yhteys.close();
         }
@@ -34,8 +34,17 @@ public class TaulukkoDao implements Dao {
     }
 
     @Override
-    public Taulukko lisaaSankari(Henkilo sankari) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void lisaaSankari(Henkilo sankari) throws Exception {
+
+        try (Connection yhteys = tietokanta.getYhteys()) {
+
+            PreparedStatement lauseke = yhteys.prepareStatement("INSERT INTO Taulukko (nimi) VALUES (?)");
+            lauseke.setString(1, sankari.getNimi());
+            lauseke.executeUpdate();
+
+            lauseke.close();
+            yhteys.close();
+        }
     }
 
 }
