@@ -1,5 +1,8 @@
 package fi.xtoxtoxt.tekstiroolipeli;
 
+/**
+ * Huoneita hallnnoiva luokka.
+ */
 public class Huone {
 
     private String kuvaus;

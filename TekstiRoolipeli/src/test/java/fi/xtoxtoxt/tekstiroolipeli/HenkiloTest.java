@@ -78,4 +78,21 @@ public class HenkiloTest {
         sakari.saaOmistukseen("avain");
         assertEquals(true, sakari.getEsineet().get("avain"));
     }
+    @Test
+    public void esineenLisaysVaarallaEsineella() {
+        Henkilo sakari = new Henkilo("Sakari");
+        sakari.saaOmistukseen("jakoavain");
+        assertEquals(false, sakari.getEsineet().get("avain"));
+    }
+    @Test
+    public void esineenOmistusNakyy() {
+        Henkilo sakari = new Henkilo("Sakari");
+        sakari.saaOmistukseen("avain");
+        assertEquals(true, sakari.omistaaEsineen("avain"));
+    }
+    @Test
+    public void esineenOmistusNakyyJosEiEsinetta() {
+        Henkilo sakari = new Henkilo("Sakari");
+        assertEquals(false, sakari.omistaaEsineen("avain"));
+    }
 }

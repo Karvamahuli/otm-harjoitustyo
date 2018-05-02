@@ -2,6 +2,9 @@ package fi.xtoxtoxt.tekstiroolipeli;
 
 import java.util.HashMap;
 
+/**
+ * Henkiloita hallinnoiva luokka.
+ */
 public class Henkilo {
 
     private String nimi;
@@ -47,11 +50,22 @@ public class Henkilo {
         this.sijaintiY = sijaintiY;
     }
 
+    /**
+     * Siirtää henkilön tiettyihin koordinaatteihin.
+     *
+     * @param sijaintiX Siirron x-koordinaatti
+     * @param sijaintiY Siirron y-koordinaatti
+     */
     public void siirraKohtaan(int sijaintiX, int sijaintiY) {
         this.sijaintiX = sijaintiX;
         this.sijaintiY = sijaintiY;
     }
 
+    /**
+     * Tulostaa Henkilon tämän hetkiset koordinaatit.
+     *
+     * @return Henkilon koordinaatit.
+     */
     public String koordinaateissa() {
         return this.sijaintiX + ", " + this.sijaintiY;
     }
@@ -68,12 +82,25 @@ public class Henkilo {
         return esineet;
     }
 
+    /**
+     * Lisää henkilon esineisiin tietyn esineen, jos sellainen on olemassa.
+     *
+     * @param esine Lisättävä esine.
+     */
     public void saaOmistukseen(String esine) {
         if (this.esineet.entrySet().stream().anyMatch(asia -> asia.getKey().equals(esine))) {
             this.esineet.put(esine, Boolean.TRUE);
         }
     }
 
+    /**
+     * Kertoo omistaako henkilo tietyn esineen.
+     *
+     * @param esine Kysyttävä esine.
+     *
+     * @return true jos henkilolla on kysytty esine ja false jos hänellä ei ole
+     * sitä tai sitä ei ole listassa.
+     */
     public boolean omistaaEsineen(String esine) {
         return this.esineet.getOrDefault(esine, Boolean.FALSE);
     }

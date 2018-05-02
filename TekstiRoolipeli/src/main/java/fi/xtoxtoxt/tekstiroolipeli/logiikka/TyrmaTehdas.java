@@ -3,6 +3,9 @@ package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
 import fi.xtoxtoxt.tekstiroolipeli.Huone;
 
+/**
+ * Pelin sankarin ja huoneiden hallinnointia suorittava luokka.
+ */
 public class TyrmaTehdas {
 
     private Huone[][] huoneet;
@@ -80,11 +83,20 @@ public class TyrmaTehdas {
         this.sankari = sankari;
     }
 
+    /**
+     * Metodi luo Henkilo -olion tyrmälle, joka toimii sitten seikkailevana
+     * sankarina.
+     *
+     * @param nimi Käyttäjän haluama nimi.
+     */
     public void hahmonLuonti(String nimi) {
         Henkilo paahenkilo = new Henkilo(nimi);
         this.setSankari(paahenkilo);
     }
 
+    /**
+     * Metodi luo tyrmälle ennalta määrätyt huoneet.
+     */
     public void huoneidenLuonti() {
         Huone aloitusHuone = new Huone("Olet Tuhkimon omassa tunkkaisessa komerossa. "
                 + "Huoneessa on kulunut sänky länsiseinustalla, "
@@ -95,7 +107,8 @@ public class TyrmaTehdas {
         this.huoneet[0][1] = kaytava;
         Huone keittio = new Huone("Olet talon suuressa keittiössä. Ruoan tuoksu osuu kantautuu nenääsi. "
                 + "Iso paha äiti seisoo hellan äärellä "
-                + "ja valmistaa ruokaa eikä huomaa kun astut huoneeseen.");
+                + "ja valmistaa ruokaa eikä huomaa kun astut huoneeseen."
+                + "Pohjoispuolella on ruokakomeron lukittu ovi ja eteläpuolella on ovi käytävälle.");
         this.huoneet[1][1] = keittio;
         Huone ruokakomero = new Huone("Saat avattua oven nostamallasi avaimella ja pääset talon ahtaaseen ruokakomeroon. "
                 + "Näet ympärilläsi erilaisia säilykkeitä "
@@ -104,6 +117,13 @@ public class TyrmaTehdas {
         this.huoneet[1][2] = ruokakomero;
     }
 
+    /**
+     * Metodi ajaa mahdollisesti peliä eteenpäin kutsumalla muita luokan
+     * sisäisiä metodeja syötteestä riippuen. Jos syöte ei vastaa mitään
+     * komentoa niin se tulostaa virheilmoituksen.
+     *
+     * @param alkuperainenSyote  Käyttäjän antama syöte
+     */
     public void seuraavaAskel(String alkuperainenSyote) {
         String syote = alkuperainenSyote.trim().toLowerCase();
         if (syote.equals("pohjoinen") || syote.equals("p")) {
@@ -150,15 +170,32 @@ public class TyrmaTehdas {
         }
     }
 
+    /**
+     * Metodi tarkastaa onko pelaaja aloitushuoneessa karkkilaatikon kanssa ja
+     * palauttaa sen mukaan joko true tai false.
+     *
+     * @return true jos sankari on aloitushuoneessa karkkilaatikon kanssa,
+     * muuten false.
+     */
     public boolean voititPelin() {
         return this.sankari.getSijaintiX() == 0 && this.sankari.getSijaintiY() == 0
                 && this.sankari.omistaaEsineen("karkkilaatikko");
     }
 
+    /**
+     * Tyrmän huoneet koordinaatistossa.
+     *
+     * @return Tyrmän huoneet kaksiulotteisessa listassa.
+     */
     public Huone[][] getHuoneet() {
         return huoneet;
     }
 
+    /**
+     * Tyrmän sankari 
+     *
+     * @return Tyrmän sankari.
+     */
     public Henkilo getSankari() {
         return sankari;
     }

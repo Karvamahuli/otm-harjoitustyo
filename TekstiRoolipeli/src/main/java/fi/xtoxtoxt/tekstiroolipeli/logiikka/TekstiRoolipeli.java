@@ -148,8 +148,6 @@ public class TekstiRoolipeli extends Application {
                 }));
 
         vieritysKentta.setFitToWidth(true);
-        tekstikentta.setMaxWidth(Double.MAX_VALUE);
-        lisaysKentta.setMaxWidth(Double.MAX_VALUE);
 
         lisaysKentta.getChildren().addAll(tekstikentta, nappi);
 
@@ -162,7 +160,12 @@ public class TekstiRoolipeli extends Application {
             nappiaPainettu();
 
             if (tyrma.voititPelin()) {
-//                Tulevaisuudessa tähän sankarin nimen lisääminen Hall of Fameen
+                
+                try {
+                    taulukkoDao.lisaaSankari(tyrma.getSankari());
+                } catch (Exception e) {
+                    System.out.println("Error: "+e);
+                }
                 ikkuna.close();
             }
         });

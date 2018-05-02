@@ -1,5 +1,8 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
+/**
+ * Pelin tulostuksien sisällöstä vastaava luokka.
+ */
 public class Tuloste {
 
     public static String alkuteksti() {
