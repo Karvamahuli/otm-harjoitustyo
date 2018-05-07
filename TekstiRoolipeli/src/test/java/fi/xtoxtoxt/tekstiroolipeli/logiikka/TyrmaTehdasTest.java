@@ -1,10 +1,7 @@
 package fi.xtoxtoxt.tekstiroolipeli.logiikka;
 
 import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -12,25 +9,10 @@ public class TyrmaTehdasTest {
 
     TyrmaTehdas tyrma;
 
-    public TyrmaTehdasTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() {
         tyrma = new TyrmaTehdas();
         tyrma.hahmonLuonti("Sakari");
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test
@@ -67,6 +49,7 @@ public class TyrmaTehdasTest {
         tyrma.getSankari().setSijaintiX(1);
         assertTrue(!tyrma.voititPelin());
     }
+
     @Test
     public void voititPelinPalauttaaFalsenYKoordinaattienPerusteella() {
         tyrma.getSankari().saaOmistukseen("karkkilaatikko");
@@ -79,12 +62,4 @@ public class TyrmaTehdasTest {
         tyrma.getSankari().saaOmistukseen("karkkilaatikko");
         assertTrue(tyrma.voititPelin());
     }
-
-//    @Test
-//    public void seuraavaAskelPohjoiseen() {
-//        tyrma.huoneidenLuonti();
-//        tyrma.seuraavaAskel("p");
-//        assertEquals(0, tyrma.getSankari().getSijaintiX());
-//        assertEquals(1, tyrma.getSankari().getSijaintiY());
-//    }
 }
