@@ -25,7 +25,7 @@
         </module>
         <module name="NestedTryDepth"/>
 
-        <!--Miscellaneous--> 
+        <!-- Miscellaneous --> 
 
         <module name='Indentation' />
         <module name="OneStatementPerLine"/>
@@ -35,7 +35,7 @@
             <property name="countEmpty" value="false"/>
         </module>
 
-        <!--Naming Conventions--> 
+        <!-- Naming Conventions --> 
 
         <module name='ClassTypeParameterName' />
         <module name='ConstantName' />
