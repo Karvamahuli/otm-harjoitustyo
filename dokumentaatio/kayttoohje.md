@@ -5,7 +5,7 @@
 Ohjelman saa käynnistettyä terminaalin komennolla
 
 ```
-java -jar todoapp.jar
+java -jar TekstiRoolipeli-1.0-SNAPSHOT.jar
 ```
 
 ## Aloitus näkymä
