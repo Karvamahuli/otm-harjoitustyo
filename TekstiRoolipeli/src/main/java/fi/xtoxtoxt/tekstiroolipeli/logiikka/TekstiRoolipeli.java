@@ -160,11 +160,11 @@ public class TekstiRoolipeli extends Application {
             nappiaPainettu();
 
             if (tyrma.voititPelin()) {
-                
+
                 try {
                     taulukkoDao.lisaaSankari(tyrma.getSankari());
                 } catch (Exception e) {
-                    System.out.println("Error: "+e);
+                    System.out.println("Error: " + e);
                 }
                 ikkuna.close();
             }
