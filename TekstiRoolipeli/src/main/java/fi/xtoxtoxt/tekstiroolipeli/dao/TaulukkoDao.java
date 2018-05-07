@@ -1,7 +1,6 @@
 package fi.xtoxtoxt.tekstiroolipeli.dao;
 
 import fi.xtoxtoxt.tekstiroolipeli.Henkilo;
-import fi.xtoxtoxt.tekstiroolipeli.Taulukko;
 import java.sql.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,6 +26,15 @@ public class TaulukkoDao implements Dao {
             }
 
             tulos.close();
+            yhteys.close();
+
+        } catch (Exception e) {
+            Connection yhteys = tietokanta.getYhteys();
+            PreparedStatement lauseke = yhteys.prepareStatement("CREATE TABLE Taulukko "
+                    + "(nimi varchar(50))");
+            lauseke.execute();
+
+            lauseke.close();
             yhteys.close();
         }
 

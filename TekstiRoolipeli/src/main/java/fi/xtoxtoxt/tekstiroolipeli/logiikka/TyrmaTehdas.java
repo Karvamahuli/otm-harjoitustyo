@@ -122,7 +122,7 @@ public class TyrmaTehdas {
      * sisäisiä metodeja syötteestä riippuen. Jos syöte ei vastaa mitään
      * komentoa niin se tulostaa virheilmoituksen.
      *
-     * @param alkuperainenSyote  Käyttäjän antama syöte
+     * @param alkuperainenSyote Käyttäjän antama syöte
      */
     public void seuraavaAskel(String alkuperainenSyote) {
         String syote = alkuperainenSyote.trim().toLowerCase();
@@ -192,7 +192,7 @@ public class TyrmaTehdas {
     }
 
     /**
-     * Tyrmän sankari 
+     * Tyrmän sankari
      *
      * @return Tyrmän sankari.
      */
