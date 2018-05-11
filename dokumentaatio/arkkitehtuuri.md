@@ -26,19 +26,23 @@ Sovelluksen toiminnallisen kokonaisuuden muodostaa lähinnä TyrmaTehdas luokka,
 
 ## Tietojen pysyväistallennus
 
-Kaikki pelin tiedot talletetaan tietokantaan. Tällä hetkellä tämä sisältää vain Hall of Fame -luettelon tiedot pelin läpäisseistä pelaajista. Tiedot tallettaa DAO -suunnitelumallia noudattava TaulukkoDao -luokka, joka tallentaa tiedot projektikansiossa olevaan tietokanta.db tietokantaan. Tietokanta tietokanta.db tallettaa sankareista pelkästään nimen seuraavassa muodossa:
+Kaikki pelin tiedot talletetaan tietokantaan. Tällä hetkellä tämä sisältää vain Hall of Fame -luettelon tiedot pelin läpäisseistä pelaajista. Tiedot tallettaa DAO -suunnitelumallia noudattava TaulukkoDao -luokka, joka tallentaa tiedot projektikansiossa olevaan tietokanta.db tietokantaan. 
 
+Tietokanta tietokanta.db tallettaa sankareista pelkästään nimen seuraavassa muodossa:
+
+<pre>
 Taulukko (
 nimi varchar(50)
 );
+</pre>
 
 Lopputulos näyttää tulostettuna seuraavalta:
 
+<pre>
 Tuhkimo
-
 Harald Hirmuinen
-
 Samvais Gamgi
+</pre>
 
 ## Päätoiminnallisuudet
 
@@ -48,7 +52,8 @@ Seuraavaksi muutamia sovelluksen toiminnallisuuksia sekvenssikaaviona.
 
 <img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/Nappia%20painettu%20peliss%C3%A4.png" width="800">
  
- ja vaadittu koodi "Nappia painettu pelissä"
+Samalla periaatteella toimivat myös suurin osa muistakin käyttäjän antamista syötteistä, kuten esimerkiksi "e", "l", "i" ja 
+"nosta karkkilaatikko".
 
 Käyttäjä->TekstiRoolipeli: painaa nappia/Enteriä pelissä \nja tekstikentässä "p"
 TekstiRoolipeli->TekstiRoolipeli: nappiaPainettu()
