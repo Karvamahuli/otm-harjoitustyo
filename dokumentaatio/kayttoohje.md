@@ -8,6 +8,8 @@ Ohjelman saa käynnistettyä terminaalin komennolla
 java -jar TekstiRoolipeli-1.0-SNAPSHOT.jar
 ```
 
+Ohjelma ei kuitenkaan (ainakaan omilla yliopisto -tunnuksilla) suostu käynnistymään _TMC_:n kautta vain terminaalin/_jar_:in kautta.
+
 ## Aloitus näkymä
 
 Ohjelma aukeaa aloitus näkymällä, jossa on kaksi nappia yksi vie Hall of Fame -luettelo näkymään 
