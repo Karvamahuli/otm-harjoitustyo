@@ -14,6 +14,9 @@ Tässä Gitissä on javalla kirjoitettu tekstiroolipeli. Ensin valitaan seikkail
 ## Releaset
 
 [Viikko 5](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/viikko5)
+[Viikko 6](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/Viikko6)
+
+## Komentorivitoiminnot
 
 ### Testaus
 
@@ -41,16 +44,6 @@ mvn package
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _TekstiRoolipeli-1.0-SNAPSHOT.jar_
 
-### Checkstyle
-
-Tiedostoon [checkstyle.xml](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/TekstiRoolipeli/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
-
-```
- mvn jxr:jxr checkstyle:checkstyle
-```
-
-Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
-
 ### JavaDoc
 
 JavaDoc generoidaan komennolla
@@ -60,3 +53,13 @@ mvn javadoc:javadoc
 ```
 
 JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
+
+### Checkstyle
+
+Tiedostoon [checkstyle.xml](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/TekstiRoolipeli/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
