@@ -3,7 +3,7 @@ Tässä Gitissä on javalla kirjoitettu tekstiroolipeli. Ensin valitaan seikkail
 
 ### Dokumentaatio
 
-[Määrittelydokumentti.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/alustava%20m%C3%A4%C3%A4rittelydokumentti.md)
+[Määrittelydokumentti.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/laskarit/viikko1/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [Arkkitehtuuri.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
