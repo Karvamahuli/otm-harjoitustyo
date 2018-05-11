@@ -11,18 +11,18 @@ Luokka/pakkauskaavio
 ## Käyttöliittymä
 
 Käyttöliittymä rakentuu neljästä Scenestä:
--Aloitus näkymästä
--Hall of Fame luettelosta
--Hahmonluonti valikosta
--Peliruudusta
+- Aloitusnäkymästä
+- Hall of Fame -luettelosta
+- Hahmonluontivalikosta
+- Peliruudusta
 
-Scenet on sijoitettu ikkunaan/Stageen ja ne vaihtelevat kun käyttäjä painaa nappia. Aloitus näkymästä pääsee Hall of Fame luetteloon ja hahmonluonti valikkoon. Hall of Famesta pääsee vain takaisin aloitus näkymään. Hahmonluonti valikosta pääsee peliruutuun ja peliruudusta ei pääse pois.
+Scenet on sijoitettu ikkunaan/Stageen ja ne vaihtelevat kun käyttäjä painaa nappia. Aloitusnäkymästä pääsee Hall of Fame -luetteloon ja hahmonluontivalikkoon. Hall of Famesta pääsee vain takaisin aloitus näkymään. Hahmonluontivalikosta pääsee peliruutuun ja peliruudusta ei pääse pois läpäisemättä peliä.
 
 Peliruudussa on kirjoitettava tekstikenttä ja pohja tekstille. Käyttäjän syöte ja syötteestä johtuva pelin edistyminen tulevat esille pohjalle, josta ne ovat tarkasteltavissa koko pelin ajan. 
 
 ## Sovelluslogiikka
 
-Sovelluksen toiminnallisen kokonaisuuden muodostaa lähinnä TyrmaTehdas luokka, jonka toimintaa aktivoi käyttäjän antamat syötteet ja niiden lähetys TyrmaTehdas -luokalle. TyrmaTehdas käsittelee käyttäjän lähettämän syötteen ja kutsuu toista luokan sisäistä metodia sen mukaan mitä käyttäjän syöte oli. Sen jälkeen luokka tekee mahdollisia muutoksia pelin Henkilo -oliolle. TyrmaTehdas -luokka lähettää Tuloste -luokalle kutsuja tulostaa tekstipohjaan uutta tekstiä riippuen siitä miten peli reagoi. 
+Sovelluksen toiminnallisen kokonaisuuden muodostaa lähinnä TyrmaTehdas -luokka, jonka toimintaa aktivoi käyttäjän antamat syötteet ja niiden lähetys TyrmaTehdas -luokalle. TyrmaTehdas käsittelee käyttäjän lähettämän syötteen ja kutsuu toista luokan sisäistä metodia sen mukaan mitä käyttäjän syöte oli. Sen jälkeen luokka tekee mahdollisia muutoksia pelin Henkilo -oliolle. TyrmaTehdas -luokka lähettää Tuloste -luokalle kutsuja tulostaa tekstipohjaan uutta tekstiä riippuen siitä miten peli reagoi. 
 
 ## Tietojen pysyväistallennus
 
@@ -50,6 +50,8 @@ Seuraavaksi muutamia sovelluksen toiminnallisuuksia sekvenssikaaviona.
 
 ### Käyttäjä syöttää peliruudussa tekstin "p"
 
+Peliruudussa käyttäjä kirjoittaa tekstikenttään "p" ja painaa "Lähetä" -nappia tai painaa Enter -painiketta.
+
 <img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/Nappia%20painettu%20peliss%C3%A4.png" width="800">
  
 Samalla periaatteella toimivat myös suurin osa muistakin käyttäjän antamista syötteistä, kuten esimerkiksi "e", "l", "i" ja 
@@ -67,3 +69,9 @@ TekstiRoolipeli-->Tuloste:
 Tuloste-->TyrmaTehdas:
 TyrmaTehdas-->TekstiRoolipeli:
 TekstiRoolipeli-->Käyttäjä: 
+
+### Käyttäjä luo uuden hahmon nimellä "Tuhkimo"
+
+Hahmonluontivalikossa käyttäjä kirjoittaa tekstikenttään "Tuhkimo" ja painaa "Aloita" -nappia tai Enter -painiketta. 
+
+<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/Hahmon%20luonti.png" width="800">
