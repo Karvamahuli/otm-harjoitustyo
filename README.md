@@ -19,6 +19,8 @@ Tässä Gitissä on javalla kirjoitettu tekstiroolipeli. Ensin valitaan seikkail
 
 [Viikko 6](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/Viikko6)
 
+[Lopullinen](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/v1.0)
+
 ## Komentorivitoiminnot
 
 ### Testaus
