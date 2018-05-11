@@ -1,5 +1,7 @@
 # Käyttöohje
 
+Lataa tiedosto [TekstiRoolipeli-1.0-SNAPSHOT.jar](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/v1.0)
+
 ## Ohjelman käynnistäminen
 
 Ohjelman saa käynnistettyä terminaalin komennolla
