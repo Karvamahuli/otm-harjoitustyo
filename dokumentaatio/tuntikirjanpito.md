@@ -11,4 +11,5 @@
 | 30.4 | 3    | Tietokanta toiminnallisuuden rakentamista ja Hall of Fame -taulukon luonti |
 | 2.5  | 7    | Tietokanta toiminnallisuuden viimeistely ja testien näpyttelyä |
 | 7.5  | 4    | Bugi fiksailua ja ohjelman siistimistä |
-| Yht | 42    |  |
+| 11.5 | 3    | Dokumentaatiota |
+| Yht | 45    |  |
