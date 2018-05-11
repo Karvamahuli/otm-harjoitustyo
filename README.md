@@ -9,11 +9,14 @@ Tässä Gitissä on javalla kirjoitettu tekstiroolipeli. Ensin valitaan seikkail
 
 [Käyttöohje.md](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
+
 [Työaikakirjanpito](https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 ## Releaset
 
 [Viikko 5](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/viikko5)
+
 [Viikko 6](https://github.com/Karvamahuli/otm-harjoitustyo/releases/tag/Viikko6)
 
 ## Komentorivitoiminnot
