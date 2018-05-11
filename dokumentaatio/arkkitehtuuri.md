@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-Ohjelma on rakennettu kolmetasoiseksi pakkauksien avulla. Paukkauksessa _fi.xtoxtoxt.tekstiroolipeli.logiikka_ on koko käyttöliittymä ja sen lisäksi peli toiminnallisuuden suorittava TyrmaTehdas -luokka. Pakkauksessa _fi.xtoxtoxt.tekstiroolpeli_ on oliohin liittyvät luokat. Pakkauksessa _fi.xtoxtoxt.tekstiroolipeli.dao_ on kaikki tietokantoihin liittyvät toiminnallisuudet. Kuvassa vihreä väri edustaa logiikka -pakkausta, oranssi väri dao -pakkausta ja valkoinen tekstiroolipeli -pakkausta.
+Ohjelma on rakennettu kolmetasoiseksi pakkauksien avulla. Paukkauksessa _fi.xtoxtoxt.tekstiroolipeli.logiikka_ on koko käyttöliittymä ja sen lisäksi peli toiminnallisuuden suorittava TyrmaTehdas -luokka. Pakkauksessa _fi.xtoxtoxt.tekstiroolipeli_ on oliohin liittyvät luokat. Pakkauksessa _fi.xtoxtoxt.tekstiroolipeli.dao_ on kaikki tietokantoihin liittyvät toiminnallisuudet. Kuvassa vihreä väri edustaa logiikka -pakkausta, oranssi väri dao -pakkausta ja valkoinen tekstiroolipeli -pakkausta.
 
 Luokka/pakkauskaavio
 
@@ -56,19 +56,6 @@ Peliruudussa käyttäjä kirjoittaa tekstikenttään "p" ja painaa "Lähetä" -n
  
 Samalla periaatteella toimivat myös suurin osa muistakin käyttäjän antamista syötteistä, kuten esimerkiksi "e", "l", "i" ja 
 "nosta karkkilaatikko".
-
-Käyttäjä->TekstiRoolipeli: painaa nappia/Enteriä pelissä \nja tekstikentässä "p"
-TekstiRoolipeli->TekstiRoolipeli: nappiaPainettu()
-TekstiRoolipeli->TyrmaTehdas: seuraavaAskel("p")
-TyrmaTehdas->TyrmaTehdas: this.liikuPohjoiseen()
-TyrmaTehdas->Henkilo: Jos pohjoiseen voi liikkua\n niin this.sankari.setSijaintiY(...)
-Henkilo->TyrmaTehdas: Sankari on liikkunut
-TyrmaTehdas->Tuloste: Tulosta.huoneenKuvaus(...)
-Tuloste->TekstiRoolipeli: TekstiRoolipeli.lisaaTeksti(...)
-TekstiRoolipeli-->Tuloste: 
-Tuloste-->TyrmaTehdas:
-TyrmaTehdas-->TekstiRoolipeli:
-TekstiRoolipeli-->Käyttäjä: 
 
 ### Käyttäjä luo uuden hahmon nimellä "Tuhkimo"
 
