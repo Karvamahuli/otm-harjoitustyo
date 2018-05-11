@@ -75,3 +75,9 @@ TekstiRoolipeli-->Käyttäjä:
 Hahmonluontivalikossa käyttäjä kirjoittaa tekstikenttään "Tuhkimo" ja painaa "Aloita" -nappia tai Enter -painiketta. 
 
 <img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/Hahmon%20luonti.png" width="800">
+
+### Käyttäjä läpäisee pelin
+
+Käyttäjä päätyy pelin alkuhuoneeseen kantaen karkkilaatikkoa. Peli tallentaa käyttäjän mahtavan sankarin nimen Hall of Fame -luetteloon jonka jälkeen se sulkee pelin.
+
+<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/Pelin%20l%C3%A4p%C3%A4isy.png">
