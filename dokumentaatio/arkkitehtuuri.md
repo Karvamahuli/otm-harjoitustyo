@@ -6,7 +6,7 @@ Ohjelma on rakennettu kolmetasoiseksi pakkauksien avulla. Paukkauksessa _fi.xtox
 
 Luokka/pakkauskaavio
 
-<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/TekstiRoolipeliKaavio.jpg" width="450">
+<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/TekstiRoolipeliKaavio.jpg" width="450">
 
 ## Käyttöliittymä
 
@@ -50,7 +50,7 @@ Seuraavaksi muutamia sovelluksen toiminnallisuuksia sekvenssikaaviona.
 
 ### Käyttäjä syöttää peliruudussa tekstin "p"
 
-<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/Nappia%20painettu%20peliss%C3%A4.png" width="800">
+<img src="https://github.com/Karvamahuli/otm-harjoitustyo/blob/master/dokumentaatio/kuvat/Nappia%20painettu%20peliss%C3%A4.png" width="800">
  
 Samalla periaatteella toimivat myös suurin osa muistakin käyttäjän antamista syötteistä, kuten esimerkiksi "e", "l", "i" ja 
 "nosta karkkilaatikko".
